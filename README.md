@@ -1,4 +1,4 @@
-# microservicesAFP
+# PRIMER EXAMEN PARCIAL - ANDRES PINEROS
 
 #Acciones previas.
 
@@ -58,11 +58,11 @@ pip install Flask
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
+#Implementación de la solución
 
 ##Crear scripts para servicios REST
 e.py contendrá todos los servicios rest
 ec.py contendrá todos los métodos de apoyo de python.
-
 e.py importa los métodos de ec.py para responder a las solicitudes REST.
 
 ```python
@@ -72,7 +72,16 @@ touch e.py
 touch ec.py
 ```
 
-Archivo de funciones REST
+###Archivo de funciones REST:
+files GET -> Obtiene todos los archivos de la carpeta home de filesystem_user. Excluye archivos ocultos y carpetas.
+files POST -> Agrega un nuevo archivo. Obtiene los parámetros de un objeto JSON (filename, content).
+files DELETE -> Elimina todos los archivos de la carpeta. Aprovecha files GET para esto. No elimina los archivos ocultos ni las carpetas.
+files PUT -> 404
+
+files/recently_created GET -> Obtiene los dos archivos más recientemente modificados o creados.
+files/recently_created POST -> 404
+files/recently_created PUT -> 404
+files/recently_created DELETE  -> 404
 
 ```python
 from flask import Flask, abort, request
@@ -121,7 +130,7 @@ if __name__ == "__main__":
 
 ```
 
-##Archivo de comandos de apoyo de python
+###Archivo de comandos de apoyo de python
 
 create_file -> Sirve para crear una archivo con un contenido específico.
 Params: file: nombre del archivo.    content: contenido (texto) del archivo.
