@@ -111,20 +111,23 @@ def read_create_file():
 
 @app.route(api_url+'/files',methods=['DELETE'])
 def delete_all_files():
-  list["files"] = read_all_files()
+  list = {}
+  list["files"] = get_all_files()
   for idx, val in enumerate(list["files"]):
-    remove_file(val)
-  return "Ok", 200
+    if not remove_one_file(val)
+      return "Error while deleting files", 400
+  return "DELETED ALL HOME FILES", 200
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port=8081,debug='True')
-
 
 ```
 
 ##Archivo de comandos de apoyo de python
 
 ``` python
+
+from subprocess import Popen, PIPE
 
 def create_file(file, content):
   result1 = Popen(["touch",'/home/filesystem_user/'+file], stdin=PIPE, stdout=PIPE, stderr=PIPE)
@@ -144,9 +147,8 @@ def get_recent_files():
   return result2.communicate()[0].split('\n')
 
 def remove_one_file(file):
-  result1 = Popen(["rm", file], stdin=PIPE, stdout=PIPE, stderr=PIPE))
+  process = Popen(["rm", "/home/filesystem_user/"+file], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+  process.wait()
   return True
-
-
 
 ```
