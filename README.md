@@ -47,8 +47,6 @@ filesystem_user ALL=(ALL)       ALL
 ##Crear el ambiente en /home/filesystem_user
 
 ```python
-
-
 mkdir envs
 mkdir flaskExam
 
@@ -59,6 +57,19 @@ virtualenv flask_env
 pip install Flask
 pip freeze > requirements.txt
 pip install -r requirements.txt
+```
+
+##Crear scripts para servicios REST
+e.py contendrá todos los servicios rest
+ec.py contendrá todos los métodos de apoyo de python.
+
+e.py importa los métodos de ec.py para responder a las solicitudes REST.
+
+```python
+cd ..
+cd flaskExam
+touch e.py
+touch ec.py
 ```
 
 ![alt test]()
