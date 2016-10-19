@@ -180,23 +180,30 @@ def remove_one_file(file):
 A continuación se verificará con un flujo de acciones el funcionamiento de los servicios REST.
 
 ### Verifico con el files GET que no hayan archivos.
-
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaA.PNG)
 
 ### Agrego 3 archivos con el file POST
 
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaB.PNG)
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaC.PNG)
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaD.PNG)
 
 ### Verifico el nombre y el contenido desde la consola.
 
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaE.PNG)
 
 ### Verifico la existencia con files GET
 
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaF.PNG)
 
 ### Verifico los ultimos últimos 2 archivos/carpetas modificados con file/recently_created GET
 
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaG.PNG)
 
 ### Elimino los archivos con files DELETE
 
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaH.PNG)
 
 ### Verifico que se hayan eliminado con files GET
 
-
+[!alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaI.PNG)
