@@ -14,9 +14,9 @@ La aplicación actualmente está corriendo en el puerto 8081.
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 8082 -j ACCEPT
 ```
 
-Reiniciar servicio
+Reiniciar servicio de iptables
 ```python
-service network restart
+service iptables restart
 ```
 
 ##Crear user file_system
