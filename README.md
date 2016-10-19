@@ -4,7 +4,14 @@
 
 ##Abrir puertos
 En iptables:
+Abro los siguientes puertos para utilizar la aplicación.
+La aplicación actualmente está corriendo en el puerto 8081.
+
 ```python
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8081 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8082 -j ACCEPT
 ```
 
 Reiniciar servicio
