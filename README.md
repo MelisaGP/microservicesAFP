@@ -15,3 +15,13 @@ Imagen:
 
 
 ![alt test](https://github.com/AndresPineros/microservicesAFP/blob/master/Captura.PNG "Imagen rikolina")
+
+
+Pedazisho de código:+
+
+```python
+
+def la funcion(elParam)
+  print("Hola mundho")
+
+```
