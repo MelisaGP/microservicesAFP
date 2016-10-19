@@ -2,6 +2,15 @@
 
 #Acciones previas.
 
+##Abrir puertos
+En iptables:
+```python
+```
+
+Reiniciar servicio
+```python
+```
+
 ##Crear user file_system
 
 ```python
