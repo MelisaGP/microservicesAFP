@@ -72,8 +72,6 @@ touch e.py
 touch ec.py
 ```
 
-![alt test]()
-
 Archivo de funciones REST
 
 ```python
@@ -124,6 +122,15 @@ if __name__ == "__main__":
 ```
 
 ##Archivo de comandos de apoyo de python
+
+create_file -> Sirve para crear una archivo con un contenido específico.
+Params: file: nombre del archivo.    content: contenido (texto) del archivo.
+
+get_all_files -> Sirve para visualizar todos los archivos. Excluye archivos ocultos y carpetas.
+
+get_recent_files -> Muestra los últimos 2 archivos creados o modificados.
+
+remove_all_files -> Elimina todos los archivos del home de filesystem_user.
 
 ``` python
 
