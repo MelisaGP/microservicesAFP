@@ -17,14 +17,13 @@ passwd filesystem_user
 ##Agregar usuario a sudoers
 En visudo:
 
+
+```python
 root    ALL=(ALL)       ALL
 operativos      ALL=(ALL)       ALL
 python_user     ALL=(ALL)       ALL
 filesystem_user ALL=(ALL)       ALL
-
-
-Imagen:
-
+```
 
 ![alt test]()
 
