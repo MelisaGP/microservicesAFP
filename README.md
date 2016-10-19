@@ -175,3 +175,28 @@ def remove_one_file(file):
   return True
 
 ```
+
+## Pruebas en POSTMAN
+A continuación se verificará con un flujo de acciones el funcionamiento de los servicios REST.
+
+### Verifico con el files GET que no hayan archivos.
+
+
+### Agrego 3 archivos con el file POST
+
+
+### Verifico el nombre y el contenido desde la consola.
+
+
+### Verifico la existencia con files GET
+
+
+### Verifico los ultimos últimos 2 archivos/carpetas modificados con file/recently_created GET
+
+
+### Elimino los archivos con files DELETE
+
+
+### Verifico que se hayan eliminado con files GET
+
+
