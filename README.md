@@ -77,11 +77,10 @@ touch ec.py
 Archivo de funciones REST
 
 ```python
-
 from flask import Flask, abort, request
 import json
 
-from ec import get_all_files, create_file, get_recent_files
+from ec import get_all_files, create_file, get_recent_files, remove_one_file
 
 app = Flask(__name__)
 api_url = '/v1.0'
@@ -110,19 +109,28 @@ def read_create_file():
   else:
     return "error while creating file", 400
 
+@app.route(api_url+'/files',methods=['DELETE'])
+def delete_all_files():
+  list["files"] = read_all_files()
+  for idx, val in enumerate(list["files"]):
+    remove_file(val)
+  return "Ok", 200
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port=8081,debug='True')
+
 
 ```
 
 ##Archivo de comandos de apoyo de python
 
 ``` python
-from subprocess import Popen, PIPE
 
 def create_file(file, content):
-  result1 = Popen(["echo","/home/systemfile_user/",content,">",file], stdin=PIPE, stdout=PIPE, stderr=PIPE)
-  result1.wait()
+  result1 = Popen(["touch",'/home/filesystem_user/'+file], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+  log = open('/home/filesystem_user/'+file, 'w')
+  log.write(content)
+  log.flush()
   return True
 
 def get_all_files():
@@ -134,6 +142,11 @@ def get_recent_files():
   result1 = Popen(["ls","/home/filesystem_user","-Art"], stdin=PIPE, stdout=PIPE, stderr=PIPE)
   result2 = Popen(["tail", "-n", "2"], stdin=result1.stdout, stdout=PIPE, stderr=PIPE)
   return result2.communicate()[0].split('\n')
+
+def remove_one_file(file):
+  result1 = Popen(["rm", file], stdin=PIPE, stdout=PIPE, stderr=PIPE))
+  return True
+
 
 
 ```
