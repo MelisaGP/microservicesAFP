@@ -16,6 +16,7 @@ La aplicación actualmente está corriendo en el puerto 8081.
 
 Reiniciar servicio
 ```python
+service network restart
 ```
 
 ##Crear user file_system
