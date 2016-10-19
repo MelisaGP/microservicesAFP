@@ -44,6 +44,23 @@ python_user     ALL=(ALL)       ALL
 filesystem_user ALL=(ALL)       ALL
 ```
 
+##Crear el ambiente en /home/filesystem_user
+
+```python
+
+
+mkdir envs
+mkdir flaskExam
+
+cd envs
+virtualenv flask_env
+. flask_env/bin/activate
+
+pip install Flask
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
+
 ![alt test]()
 
 Archivo de funciones REST
