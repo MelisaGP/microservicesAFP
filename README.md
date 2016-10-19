@@ -24,10 +24,12 @@ Reiniciar servicio
 ```
 
 ```python
-
 useradd filesystem_user
 passwd filesystem_user
-
+```
+Darle permisos de sudoer
+```linux
+usermod -G wheel filesystem_user
 ```
 
 ##Agregar usuario a sudoers
