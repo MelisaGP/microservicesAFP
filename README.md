@@ -4,7 +4,9 @@ https://github.com/AndresPineros/microservicesAFP
 
 ##Abrir puertos
 En iptables:
+
 Abro los siguientes puertos para utilizar la aplicación.
+
 La aplicación actualmente está corriendo en el puerto 8081.
 
 ```python
@@ -14,12 +16,12 @@ La aplicación actualmente está corriendo en el puerto 8081.
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 8082 -j ACCEPT
 ```
 
-Reiniciar servicio de iptables
+Reiniciar servicio de iptables para que se abran los puertos.
 ```python
 service iptables restart
 ```
 
-##Crear user file_system
+##Crear user file_system sobre el cual se realizará el trabajo.
 
 ```python
 ```
@@ -28,12 +30,12 @@ service iptables restart
 useradd filesystem_user
 passwd filesystem_user
 ```
-Darle permisos de sudoer
+Darle permisos de sudoer al usuario filesystem_user en caso de que realice alguna acción de sudoers.
 ```linux
 usermod -G wheel filesystem_user
 ```
 
-##Agregar usuario a sudoers
+##Agregar usuario a sudoers desde el archivo visudo.
 En visudo:
 
 
@@ -45,6 +47,7 @@ filesystem_user ALL=(ALL)       ALL
 ```
 
 ##Crear el ambiente en /home/filesystem_user
+Aqui se creará el entorno con virtualenvs. Sobre este entorno se instalará Flask. Flask es la herramienta que permite desplegar los servicios REST en la máquina.
 
 ```python
 mkdir envs
@@ -62,7 +65,9 @@ pip install -r requirements.txt
 
 ##Crear scripts para servicios REST
 e.py contendrá todos los servicios rest
+
 ec.py contendrá todos los métodos de apoyo de python.
+
 e.py importa los métodos de ec.py para responder a las solicitudes REST.
 
 ```python
@@ -136,6 +141,7 @@ if __name__ == "__main__":
   app.run(host='0.0.0.0',port=8081,debug='True')
 
 ```
+En la última línea del script se puede ver que la aplicación de Flask atenderá las solicitudes desde el puerto 8081.
 
 ###Archivo de comandos de apoyo de python
 
@@ -207,3 +213,5 @@ A continuación se verificará con un flujo de acciones el funcionamiento de los
 ### Verifico que se hayan eliminado con files GET
 
 ![alt text](https://github.com/AndresPineros/microservicesAFP/blob/master/imagenesandres/CapturaI.PNG)
+
+Ya se han verificado todos los servicios REST del contrato especificado en el primer examen parcial.
