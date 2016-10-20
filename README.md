@@ -146,7 +146,7 @@ get_all_files -> Sirve para visualizar todos los archivos. Excluye archivos ocul
 
 get_recent_files -> Muestra los últimos 2 archivos creados o modificados.
 
-remove_all_files -> Elimina todos los archivos del home de filesystem_user. No elimina carpetas ni archivos ocultos.
+remove_all_files -> Elimina un archivo de /home/filesystem_user.
 
 ``` python
 
